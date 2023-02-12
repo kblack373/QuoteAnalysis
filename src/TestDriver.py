@@ -5,8 +5,13 @@
 import FileReader
 import Quote
 
-reader = FileReader.FileReader("../files/tester.csv")
+reader = FileReader.FileReader("../files/quotes.txt")
 flatList = reader.openFlatFile()
 
-ql = Quote.QuoteList(flatList)
-print(ql.tokenize())
+quoteLister = Quote.QuoteList(flatList)
+quotes = quoteLister.tokenize()
+
+for quote in quotes:
+    print(quote.sen)
+    print("Length: ", quote.charCount)
+
