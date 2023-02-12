@@ -13,5 +13,6 @@ quotes = quoteLister.tokenize()
 
 for quote in quotes:
     print(quote.sen)
-    print("Length: ", quote.charCount)
+    length = quote.charCount()
+    print("Length: ", length)
 
