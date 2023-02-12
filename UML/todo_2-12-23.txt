@@ -1,0 +1,11 @@
+to-dos
+2-12-23
+
+
+* Redesign return value for QuoteList. Either QuoteList should implement a BST or use numpy/pandas. Lists are bad.
+
+see: https://stackoverflow.com/questions/3917574/how-is-pythons-list-implemented
+
+* Long-term: add webscraper and config files to read different websites
+
+*Long-term: Final package should be launchabe terminal application with arguments and options/flags
