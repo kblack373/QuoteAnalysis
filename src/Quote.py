@@ -23,16 +23,9 @@ class QuoteList:
             #pass in local ql to global ql
             self.ql = ql
         return ql
-
-    def filter(self, minWidth, maxWidth):
-        ql = self.ql
-        qlFil = []
-        
-        for quote in ql:
-            lineLen = quote.charCount
-            if maxWidth>=lineLen or minWidth<=lineLen:
-                qlFil.append(quote)
-        return qlFil
+    
+    def getList(self):
+        return self.ql
 
     def filter(self, minWidth, maxWidth, height):
         if height == 0:
@@ -44,9 +37,19 @@ class QuoteList:
             lineLen = quote.charCount
             #divide the line char count by number of lines
             lineLen = lineLen/height
-            if maxWidth>=lineLen or minWidth<lineLen:
+            if maxWidth>=lineLen and minWidth<lineLen:
                 qlFil.append(quote)
+        return qlFil
 
+    def filter(self, minWidth, maxWidth):
+        ql = self.ql
+        qlFil = []
+        
+        for quote in ql:
+            lineLen = quote.charCount()
+            if maxWidth>=lineLen and minWidth<=lineLen:
+                qlFil.append(quote)
+        return qlFil
 
 class Quote:
     def __init__(self, flatSentence):
